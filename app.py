@@ -35,11 +35,31 @@ def callback():
     return 'OK'
 
 
+# @handler.add(MessageEvent, message=TextMessage)
+# def handle_message(event):
+#     line_bot_api.reply_message(
+#         event.reply_token,
+#         TextSendMessage(text=event.message.text))
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text))
+    msg = event.message.text
+    if msg == '交互作用' :
+        inp = '輸入藥品為'
+        drug_1 = input('請輸入藥品1')
+        drug_2 = input('請輸入藥品2')
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=inp,drug_1,drug_2))
+    else :
+        line_bot_api.reply_message(
+         event.reply_token,
+         TextSendMessage(text='無效指令'))
+
+
+
+
+
 
 
 if __name__ == "__main__":
