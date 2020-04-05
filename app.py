@@ -45,12 +45,13 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     if msg == '交互作用' :
-        inp = '輸入藥品為'
         drug_1 = input('請輸入藥品1')
         drug_2 = input('請輸入藥品2')
+        opt = f'查詢藥品為{drug_1}與{drug_2}'     
+
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=inp,drug_1,drug_2))
+            TextSendMessage(text=opt)
     else :
         line_bot_api.reply_message(
          event.reply_token,
