@@ -47,7 +47,9 @@ def handle_message(event):
     if msg == '交互作用' :
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text='請輸入藥品1'))
+            TextSendMessage(text='請輸入藥品1'),
+            TextSendMessage(text='請輸入藥品2'))
+        
     elif msg in ['安安','你好','妳好','hi','Hi'] :
         line_bot_api.reply_message(
             event.reply_token,
