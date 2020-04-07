@@ -48,6 +48,10 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text='請輸入藥品1'))
+    elif msg in ['安安','你好','妳好','hi','Hi'] :
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text='哩賀'))
     # drug_1 = event.message.text
     #     line_bot_api.reply_message(
     #         event.reply_token,
